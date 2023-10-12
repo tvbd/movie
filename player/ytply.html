@@ -1,0 +1,81 @@
+
+<html>
+
+<head>
+<title>PLY VIP PLAYER</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+<script src='https://cdn.plyr.io/3.2.4/plyr.js'></script>
+<link rel='stylesheet' href='https://cdn.plyr.io/3.2.4/plyr.css'>
+
+ 
+ 
+<style>
+.plyr--full-ui input[type=range] {
+ color:red!important
+}
+.plyr--video .plyr__controls .plyr__control[aria-expanded=true] {
+ background:red
+}
+.plyr__control--overlaid:hover {
+ background:red
+}
+.plyr__control--overlaid {
+ background:red
+}
+.plyr__control:hover {
+ background:red!important
+}
+.plyr__control--overlaid {
+ padding:15px
+}
+.plyr__video-embed iframe {
+ top:-50%;
+ height:200%
+}
+</style>
+
+
+
+
+</head>
+<body>
+  
+  
+
+ <script>
+function getParam ( sname )
+{
+  var params = location.search.substr(location.search.indexOf("?")+1);
+  var sval =  params.replace("sv=", "");
+  
+  return sval;
+}
+var sv = getParam("sv");
+</script>
+<script>
+  var responseText = ''+sv+'';
+  urlArry = responseText.split(',');
+  start = true;
+  num_of_urlArry = urlArry.length;
+  index_of_urlArry = 0;
+</script>
+
+
+<script>document.write('<div id="player" data-plyr-provider="youtube" data-plyr-embed-id=""+sv+""></div>');</script>
+
+
+
+<script>const player = new Plyr('#player', {
+controls:["play-large","play","progress","current-time","mute","volume","captions","settings","fullscreen","pip","airplay"],tooltips:{controls:!0},quailty:{ default: 'default', options: ['hd2160', 'hd1440', 'hd1080', 'hd720', 'large', 'medium', 'small', 'tiny', 'default'] }
+});</script>
+
+
+
+
+</body>
+
+
+</html> 
