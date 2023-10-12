@@ -41,8 +41,9 @@
 
 </head>
 
- 
- <script>
+<body>
+  
+  <script>
 function getParam ( sname )
 {
   var params = location.search.substr(location.search.indexOf("?")+1);
@@ -60,13 +61,9 @@ var sv = getParam("sv");
   index_of_urlArry = 0;
 </script>
 
- 
-<body>
-  
- 
-
-<script>document.write('<div id="player" data-plyr-provider="youtube" data-plyr-embed-id=""+sv+""></div>');</script>
-
+<script>
+document.write('<div id="player" data-plyr-provider="youtube" data-plyr-embed-id=""+sv+""></div>');
+</script>
 
 
 <script>const player = new Plyr('#player', {
