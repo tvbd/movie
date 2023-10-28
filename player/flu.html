@@ -1,0 +1,79 @@
+<html>
+<head>
+<title>Flu PLAYER</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+<script src="//cdn.fluidplayer.com/v3/current/fluidplayer.min.js"></script>
+</head>
+
+<body>
+  
+  <script>
+function getParam ( sname )
+{
+  var params = location.search.substr(location.search.indexOf("?")+1);
+  var sval =  params.replace("sv=", "");
+  
+  return sval;
+}
+var sv = getParam("sv");
+</script>
+<script>
+  var responseText = ''+sv+'';
+  urlArry = responseText.split(',');
+  start = true;
+  num_of_urlArry = urlArry.length;
+  index_of_urlArry = 0;
+</script>
+
+<script>
+document.write('<video id="video-id" poster="" style=" height:100%;width:100%"> <source src="+sv+" type="video/mp4"/> <track label="English" kind="metadata" srclang="en" src="" default></video>');
+</script>
+
+  	<script> 
+		
+		fluidPlayer(
+			"video-id",
+			{
+				layoutControls: {
+					title: '',
+					primaryColor: "#28B8ED",
+					allowDownload: true,
+					playbackRateEnabled: true,
+					subtitlesEnabled: false,
+					doubleclickFullscreen: true,
+					controlBar: {
+						autoHide:           true,
+						autoHideTimeout:    3,
+						animated:           true
+					},
+					logo: {
+						imageUrl: 'http://aliflailabd.com/public/images/aliflaila_logo_fav.png', // Default null
+						position: 'top right', // Default 'top left'
+						clickUrl: 'aliflailabd.com', // Default null
+						opacity: 0.7, // Default 1
+						mouseOverImageUrl: 'http://aliflailabd.com/public/images/aliflaila_logo_fav.png', // Default null
+						imageMargin: '10px', // Default '2px'
+						hideWithControls: true, // Default false
+						showOverAds: true // Default false
+					}
+				}
+			}
+		); 
+	</script>
+
+
+  
+<script>const player = new Plyr('#player', {
+controls:["play-large","play","progress","current-time","mute","volume","captions","settings","fullscreen","pip","airplay"],tooltips:{controls:!0},quailty:{ default: 'default', options: ['hd2160', 'hd1440', 'hd1080', 'hd720', 'large', 'medium', 'small', 'tiny', 'default'] }
+});</script>
+
+
+
+
+</body>
+
+
+</html> 
